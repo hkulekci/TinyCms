@@ -1,9 +1,9 @@
 Notlar:
 
-1- parse_ini_file ile kurulum yapabilecek şekilde bir install.php ayarlanacak.
-2- Local'de Son durum denenecek. Türkçe kısımlar değiştirilecek.
-3- Eksikler bu listenin devamına eklenecek ve yapılanlar ise başına tire konularak kaldırılacak.
-4- Db_funcs.php ve funcs.php dosyalarında fazlalıklar kalkacak.
-5- Örnek site normal CMS'den ayrı olacak.
-6- Dil dosyası eklenecek.
-7- content/ klasörü altında bir kaç şey elden geçirilecek. 
+1- parse_ini_file ile kurulum yapabilecek ÅŸekilde bir install.php ayarlanacak.
+2- Local'de Son durum denenecek. TÃ¼rkÃ§e kÄ±sÄ±mlar deÄŸiÅŸtirilecek.
+3- Eksikler bu listenin devamÄ±na eklenecek ve yapÄ±lanlar ise baÅŸÄ±na tire konularak kaldÄ±rÄ±lacak.
+4- Db_funcs.php ve funcs.php dosyalarÄ±nda fazlalÄ±klar kalkacak.
+5- Ã–rnek site normal CMS'den ayrÄ± olacak.
+6- Dil dosyasÄ± eklenecek.
+7- content/ klasÃ¶rÃ¼ altÄ±nda bir kaÃ§ ÅŸey elden geÃ§irilecek. 
