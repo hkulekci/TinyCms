@@ -7,11 +7,6 @@
 	define("_DB_PASSWORD","demo");
 	define("_DB_DATABASENAME","demo_");
 	define("_DB_HATAMESAJI","_DB");
-	/*
-	bu 
-		<div class="hatamesaji_DB">Hata!</div> 
-	çıktısı verir!
-	*/
-	// >>>>> connect.php  //
+
 
 ?>
