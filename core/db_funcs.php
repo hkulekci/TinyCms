@@ -33,16 +33,16 @@ function get_content($urlTipi){
 }
 
 function get_category_content($urlTipi){
-	$con = content_accordingto_category_with_image(get_info("kategoriler",$urlTipi,"ID"))."<br><br>";
+	$con = content_accordingto_category_with_image(get_info("categories",$urlTipi,"Id"))."<br><br>";
 	return $con;
 }
 
-function get_content_end($urlTipi, $turu="icerik"){
-	if ($turu=="kategori"){
-		$con = "<h1>".get_info("kategoriler",$urlTipi,"KATEGORI")."</h1>\n";
+function get_content_end($urlTipi, $turu="content"){
+	if ($turu=="content"){
+		$con = "<h1>".get_info("categories",$urlTipi,"Category")."</h1>\n";
 		$con .= get_category_content($urlTipi)."\n";
 	}else{
-		$con = "<h1>".get_info("icerikler",$urlTipi,"BASLIK")."</h1>\n";
+		$con = "<h1>".get_info("contents",$urlTipi,"Title")."</h1>\n";
 		$con .= get_content($urlTipi)."\n";
 	}
 	return $con;
@@ -52,7 +52,7 @@ function meta_title_info($urlType=""){
 	global $siteTitle;
 	global $siteMetaTags;
 	global $siteInfo;
-	$qq = mysql_query("SELECT*FROM `icerikler` WHERE `URL_TIPI`='".sqlcleaner($urlType)."';");
+	$qq = mysql_query("SELECT*FROM `contents` WHERE `Url`='".sqlcleaner($urlType)."';");
 	$con = "";
 	$con .= "<meta http-equiv=\"Content-Type\" content=\"text/html; charset="._PAGE_CHARSET."\" />\n";
 	if (($urlType=="")||(mysql_num_rows($qq)==0)){
@@ -76,16 +76,13 @@ function meta_title_info($urlType=""){
 
 /***********************
 
-CMS Harici fonksiyonlar
+other functions from CMS 
 
 ************************/
 
 
-//TODO: get_info("categories",$url,"Id")
 function get_category_id($url){
-	$qq = mysql_query("SELECT*FROM `categories` WHERE `Url`='".sqlcleaner($url)."'");
-	$t = mysql_fetch_array($qq);
-	return $t["Id"];
+	return get_info("categories",$url,"Id");
 }
 
 
@@ -107,15 +104,12 @@ function content_short_info_with_images($resim_kat,$id,$baslik){//urun_kisa_bilg
 	$resimlerB = explode(",",$resimler);
 	$con .= '<a href="javascript:void(0)" onclick="getHTML(\'post\',\'../icerik/urunler.php\',\'sayfa=urun&id='.$id.'\',\'basicModalContent\');$(\'#basicModalContent\').modal();" class="basic">';
 	if (trim($resimlerB[0])!=""){ 
-		$tf = mysql_fetch_array(mysql_query("SELECT*FROM `resimler` WHERE `ID`='".$resimlerB[0]."'"));
+		$tf = mysql_fetch_array(mysql_query("SELECT*FROM `images` WHERE `Id`='".$resimlerB[0]."'"));
 		$con .= '<div align="center" style="background-image:url(\''.$siteUrl."userfiles/image/"."small_".$tf["SOURCE"].'\');" class="urun_resmi"></div>';
-		//$con .= '<img src="'._KOK_DIZIN._IMAGESRC_DIRECTORY."small_".$tf["SOURCE"].'" alt="'.$tt["BASLIK"].' - '.$tt["ANAHTAR_KELIMELER"].'"/>';
 	}else{
 		$con .= '<div align="center" class="urun_resmi"></div>';
 	}
 	$con .= '<br>'.$baslik.'<br>';
-	
-	//$con .='<img src="'.$siteUrl.'icerik/Scripts/img/basic/urun_detaylari.jpg" width="120px" height="25px" align="bottom" alt="Ürün Detaylari"/>';//
 	$con .= '</a>';
 	return  $con;
 }
@@ -153,11 +147,11 @@ function content_accordingto_category_with_image($id){
 	$con .= '</script>';
 	$con .= '<div id="basicModalContent" style=\'display:none;\'>Sayfa Yükleniyor...</div>';
 	$con .= '<table celpadding="0" cellspacing="0">';
-	$urunlerQuery = mysql_query("SELECT * FROM `icerikler` WHERE icerikler.KATEGORI = '".sqlcleaner($id)."'");
+	$urunlerQuery = mysql_query("SELECT * FROM `contents` WHERE contents.Category = '".sqlcleaner($id)."'");
 	while($tt = mysql_fetch_array($urunlerQuery)){
 		if ($i == 0) {$con .= '<tr>';}		
 		$con .= '<td class="td_urunler_listesi">';
-		$con .= content_short_info_with_images($tt["RESIM_KAT"],$tt["ID"],$tt["BASLIK"]);
+		$con .= content_short_info_with_images($tt["Image_Category"],$tt["Id"],$tt["Title"]);
 		$con .= '</td>';
 		if ($i == _KACTANEBIRSIRADA) {$con .= '</tr>';}
 		$i++;

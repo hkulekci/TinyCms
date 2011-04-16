@@ -26,7 +26,7 @@ $_GET["type"] = $seo_url[0];
 $_GET["id"] = $seo_url_son[0];
 
 if (trim($_GET["id"])!=""){
-		if(trim($_GET["type"])=="kategori"){
+		if(trim($_GET["type"])=="category"){
 			if (trim(get_category_content($_GET["id"])) == ""){
 				$_GET["id"] = "404";
 				$_GET["type"] = "content";

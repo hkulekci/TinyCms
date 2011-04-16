@@ -3,9 +3,9 @@
 
 	// <<<<< connect.php//
 	define("_DB_LOCALHOST","localhost");
-	define("_DB_USERNAME","demo_tug");
-	define("_DB_PASSWORD","demo_123");
-	define("_DB_DATABASENAME","demo_tug");
+	define("_DB_USERNAME","demo");
+	define("_DB_PASSWORD","demo");
+	define("_DB_DATABASENAME","demo_");
 	define("_DB_HATAMESAJI","_DB");
 	/*
 	bu 
