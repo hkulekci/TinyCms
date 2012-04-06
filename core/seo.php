@@ -1,6 +1,17 @@
 <?php
+/**
+  *
+  *		Burada yapılan Url düzenlemeleri ile sitenin url'leri 
+  *		"{BASE}/index.php?p=34" yerine seo uyumlu olan 
+  * 	"{BASE}/index/page-title-or-whatever" şeklinde görünebilecek 
+  *
+  *
+  */
+
+
 $siteUrl_req = $siteUrl;
 
+// URL'yi alıyoruz
 $request_uri = $_SERVER['REQUEST_URI'];
 $siteUrl_req = explode("/",$siteUrl_req);
 $url = explode("/",$request_uri);

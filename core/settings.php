@@ -1,4 +1,9 @@
 <?
+/**
+*	veritabanına kayıtlı settings tablosundaki verileri geri döndürüyor.
+*	Bu sayede bazı verileri yapabileceğimiz web arayüzünden değiştirebiliriz.
+*
+*/
 function get_setting($get){
 	$q = mysql_query("SELECT*FROM `settings` WHERE `Define`='".sqlcleaner($get)."';");
 	if (mysql_num_rows($q)==0)

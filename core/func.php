@@ -99,7 +99,7 @@ function un_escape($string)
 	return $string;
 }
 
-function cut_string($string,$length_t,$tags="disable"){
+function cut_string($string, $length_t, $tags="disable"){
 	/*
 	* @string -> text
 	* @length_t -> length of text
