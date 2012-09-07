@@ -30,7 +30,7 @@ function transdate($coming,$turu = "kisa"){
 		"11" => _KASIM,
 		"12" => _ARALIK
 	);
-    	if (preg_match('/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})/', $coming, $regs) ) {
+    	if (!preg_match('/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})/', $coming, $regs) ) {
 	// ereg is deprecated fix
 	//if (!ereg ("([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $coming, $regs)) {
 	   return "Invalid date format: $coming";
