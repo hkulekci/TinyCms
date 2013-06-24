@@ -24,7 +24,7 @@ foreach($url as $l){
 	$i++;
 }
 
-$seo_url_son = explode(".",$seo_url[1]);
+$seo_url_son = explode(".",$seo_url[0]);
 
 if ($seo_url[0]=="style.css"){
 	header('Content-type: text/css');
