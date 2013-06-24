@@ -1,4 +1,4 @@
-<?
+<?php
 //include.php
 include_once("constants.php");
 include_once("errormessages.php");
