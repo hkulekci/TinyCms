@@ -53,7 +53,7 @@ Sayfa içerisindeki değişkenler
 	</div>
 	
 	<div id="content">
-	  <?php echo $CMSContents ?>
+	  <?php echo $CMSContent ?>
 	</div>
 
 	<div id="footer"></div>

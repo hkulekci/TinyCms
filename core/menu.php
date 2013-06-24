@@ -1,4 +1,4 @@
-<?
+<?php
 function get_sub_category($id="0"){
 	global $siteUrl;
 	$con = "";

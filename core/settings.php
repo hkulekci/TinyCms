@@ -1,4 +1,4 @@
-<?
+<?php
 /**
 *	veritabanına kayıtlı settings tablosundaki verileri geri döndürüyor.
 *	Bu sayede bazı verileri yapabileceğimiz web arayüzünden değiştirebiliriz.

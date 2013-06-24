@@ -2,7 +2,7 @@
 CREATE TABLE `settings` (
   `ID` int(5) NOT NULL AUTO_INCREMENT,
   `DEFINE` varchar(100) CHARACTER SET latin5 NOT NULL,
-  `VALUE` text CHARACTER SET latin5 NOT NULL,
+  `Value` text CHARACTER SET latin5 NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=31 ;
 
@@ -44,7 +44,7 @@ CREATE TABLE `contents` (
 
 
 INSERT INTO `contents` (`ID`, `Category`, `Title`, `Url`, `Content_Type`, `Content`, `Image_Category`, `Video_Category`, `Tags`, 
-`EKLENME_TARIHI`, `MENUDEMI`, `MENU_SIRASI`, `UST_ELEMAN`, `Hit`, `Online`) VALUES 
+`Insertion_Date`, `OnMenu`, `Order_Menu`, `Parent`, `Hit`, `Online`) VALUES 
 (1, NULL, '', 'anasayfa', 'uygulama', 'content/homepage.php', '', '', 'Example Site', '2009-04-19 19:11:49', '0', NULL, NULL, 0, '1');
 
 -- --------------------------------------------------------
@@ -118,7 +118,7 @@ CREATE TABLE `users` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 
-INSERT INTO `users` (`id`, `ad_soyad`, `user`, `pass`, `email`, `created`) VALUES 
+INSERT INTO `users` (`id`, `name_surname`, `user`, `pass`, `email`, `created`) VALUES 
 (1, 'Haydar KÜLEKCİ', 'gar', MD5'123456', NULL, '2009-12-25 12:18:20');
 
 -- --------------------------------------------------------
