@@ -2,10 +2,8 @@
 	define("_PAGE_CHARSET","utf-8");
 
 	/*
-
 Burada tanımlanan sabitler sistem 
 içerisinde başka yerlerde kullanılıyor.
-
 	*/
 
 	// <<<<< connect.php//
